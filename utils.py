@@ -5,6 +5,8 @@ from sklearn import preprocessing
 import yaml
 from pathlib import Path
 
+MMD=np.loadtxt('Data/MMD.txt',delimiter=',')
+
 
 def difference(a,b,name1,name2,distance_name):
     a=a.reshape(-1)
@@ -54,7 +56,7 @@ def median_plot(distance,regret,distance_name,slide=0.1,gap=0.01,alpha=0.8,fonts
     return N,np.arange(min_d,max_d,gap)
 
 
-def unbias_and_describe(l_min,l_max,distance,threshold):
+def unbias_and_describe(l_min,l_max,distance,threshold,csm_study):
 
 
     unbias=distance[:,l_min:l_max].copy()
