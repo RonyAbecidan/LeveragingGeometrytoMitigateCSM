@@ -8,11 +8,6 @@
 
 [![](https://img.shields.io/badge/Bibtex-0C0C0C?style=for-the-badge)](#CitingUs)   [![](https://img.shields.io/badge/Article-2E86C1?style=for-the-badge)](https://hal.science/hal-04229257v1/)  [![](https://img.shields.io/badge/Presentation-F7DC6F?style=for-the-badge)](https://bit.ly/wifs2022holisticsteganalysis)
 
-<p align="center">
-  <img src="Assets/illustration.png" />
-</p>
-
-
 ### Rony Abecidan, Vincent Itier, Jeremie Boulanger, Patrick Bas, Tomáš Pevný
 
 
@@ -20,11 +15,16 @@
 
 *Abstract : In operational scenarios, steganographers use sets of covers from various sensors and processing pipelines that differ significantly from those used by researchers to train steganalysis models. This leads to an inevitable performance gap when dealing with out-of-distribution covers, commonly referred to as Cover Source Mismatch (CSM). In this study, we consider the scenario where test images are processed using the same pipeline. However, knowledge regarding both the labels and the balance between cover and stego is missing. Our objective is to identify a training dataset that allows for maximum generalization to our target. By exploring a grid of processing pipelines fostering CSM, we discovered a geometrical metric based on the chordal distance between subspaces spanned by DCTr features, that exhibits high correlation with operational regret while being not affected by the cover-stego balance. Our contribution lies in the development of a strategy that enables the selection or derivation of customized training datasets, enhancing the overall generalization performance for a given target. Experimental validation highlights that our geometry-based optimization strategy outperforms traditional atomistic methods given reasonable assumptions.*
 
+<p align="center">
+  <img src="Assets/illustration.png" />
+</p>
+
+
 ## Comments about the repo : 
 
 - The file ```pipelines.csv``` is a directory of pipelines disclosing their parameters and identifying them precisely with a number.
 
-- To be able to reproduce our results, you need classical python library (e.g. numpy, matplotlib and pandas). A playground notebook is available to let you reproduce the results using these library.
+- To be able to reproduce our results, you need classical python library (e.g. numpy, matplotlib and pandas). A playground notebook is available to let you reproduce the results using these libraries.
 
 
 ## Main references
