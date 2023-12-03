@@ -20,7 +20,7 @@ def chordal_distance(angles):
 
 def compute_chordal_distance(source,target):
 
-    '''
+   '''
     Inputs : 
     @source: DCTr features of the source
     @target : DCTr features of the target
@@ -28,7 +28,7 @@ def compute_chordal_distance(source,target):
     This function returns the chordal distance between the two flats that are respectively supporting source and target data.
     When it is 1, the two flats are orthogonal. When it is 0, the two flats are co-linear.
         
-    '''
+   '''
 
    pca = PCA(n_components=0.999)
    pca.fit(source)
