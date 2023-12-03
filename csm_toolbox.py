@@ -2,6 +2,46 @@ from utils import *
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+from sklearn.decomposition import PCA
+from scipy.linalg import subspace_angles
+
+
+def chordal_distance(angles):
+    '''
+    Inputs : 
+    @angles: The principal angles between the two flats to compare.
+
+    This function returns the chordal distance of the two flats based on their principal angles.
+        
+    '''
+
+    return (np.power(np.sin(angles),2)).mean()
+
+
+def compute_chordal_distance(source,target):
+
+    '''
+    Inputs : 
+    @source: DCTr features of the source
+    @target : DCTr features of the target
+
+    This function returns the chordal distance between the two flats that are respectively supporting source and target data.
+    When it is 1, the two flats are orthogonal. When it is 0, the two flats are co-linear.
+        
+    '''
+
+   pca = PCA(n_components=0.999)
+   pca.fit(source)
+   source_components=pca.components_
+
+   pca.fit(target)
+   target_components=pca.components_
+
+   m=min(len(source_components),len(target_components))
+   FlatSource=source_components[0:m]
+   FlatTarget=target_components[0:m]
+
+   return chordal_distance(subspace_angles(FlatSource.T, FlatTarget.T))
 
 def harmonic_sum(n):
     i = 1
